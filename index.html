@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Home-GreenView</title>
 </head>
 <body>
-    <img src="./Images/logo.jpg" alt="Logo" height="50" title="Logo">
+    <img src="/Images/logo.jpg" alt="Logo" height="50" title="Logo" class="Logo">
     <center>
         <h1><b>Vettoor Green View Guest House</b></h1>
     <nav>
@@ -14,16 +15,31 @@
     <a href="rooms.html">ROOMS &amp; PRICE</a> |
     <a href="gallery.html">GALLERY</a> |
     <a href="about.html">ABOUT US</a>
-</nav>
+    </nav>
 <br>
 <br>
-<img src="Images/Main-image.jpg" alt="Mainphoto" height="200" >
+<div class="slideshow-container">
+    <img class="slide" src="/Images/Main Photo.jpg" alt="Slide 1">
+    <img class="slide" src="/Images/Room1.jpg" alt="Slide 2">
+    <img class="slide" src="/Images/Room2.jpg" alt="Slide 3">
+    <img class="slide" src="/Images/amenity.jpg" alt="Slide 4">
+</div>
+
 </center>
 <br>
 <br>
-<center><a href="rooms.html"><img src="./Images/Room1.jpg" alt="rooms" height="100"></a></center>
-<img src="./Images/imgno2.jpg" alt="Green View Guest House view" height="250">
-<h2>About Green View Guest House</h2>
+<div class="photo-row">
+    <div class="photo-box">
+        <img src="/Images/imgno2.jpg" alt="Green View View">
+    </div>
+
+    <div class="photo-box">
+        <img src="/Images/Room1.jpg" alt="Room View">
+    </div>
+</div>
+
+
+<h2><u>About Green View Guest House</u></h2>
 
 <p>
 Green View Guest House is located in Devalokam, Kottayam, a serene and peaceful area surrounded by lush greenery.<br>
@@ -42,14 +58,26 @@ We focus on providing a clean, welcoming, and homely atmosphere so that every gu
         Phone: +91 7736988416 | Email: greenview@gmail.com
     </p>
 </footer>
+<script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+
+    showSlides();
+</script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
